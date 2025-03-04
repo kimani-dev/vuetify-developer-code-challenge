@@ -7,7 +7,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppBar: typeof import('./src/components/AppBar.vue')['default']
+    AppCustomLogo: typeof import('./src/components/AppCustomLogo.vue')['default']
+    BlogCard: typeof import('./src/components/BlogCard.vue')['default']
+    FeaturedBlog: typeof import('./src/components/FeaturedBlog.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    PinnedBlog: typeof import('./src/components/PinnedBlog.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
