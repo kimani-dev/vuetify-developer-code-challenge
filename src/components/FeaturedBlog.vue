@@ -1,25 +1,32 @@
 <template>
-  <v-card
-    class="mt-2"
-    flat
+  <BaseBlogCard
+    v-slot="{ isHovering }"
+    rounded="s-xl"
   >
-    <template #text>
-      <v-row>
-        <v-col cols="4">
-          <v-img
-            :src="blog.image"
-            height="100"
-            width="100"
-          />
-        </v-col>
+    <v-row>
+      <v-col
+        cols="12"
+        md="4"
+      >
+        <BlogImage
+          :src="blog.image"
+          :is-hovering
+          height="180"
+          width="100%"
+        />
+      </v-col>
 
-        <v-col cols="8">
+      <v-col
+        cols="12"
+        md="8"
+      >
+        <div class="d-flex flex-column ga-2">
           <p class="text-h6">
             {{ blog.title }}
           </p>
 
-          <p class="text-subtitle-1 mt-2">
-            {{ blog.text.substring(0, 50) }}
+          <p class="text-subtitle-1 font-weight-light">
+            {{ blog.text.substring(0, 150) }}
           </p>
 
           <v-chip
@@ -27,10 +34,10 @@
             text="10 Mins"
             variant="text"
           />
-        </v-col>
-      </v-row>
-    </template>
-  </v-card>
+        </div>
+      </v-col>
+    </v-row>
+  </BaseBlogCard>
 </template>
 
 <script setup lang="ts">

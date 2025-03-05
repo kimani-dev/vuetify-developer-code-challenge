@@ -1,19 +1,54 @@
 <template>
-  <v-card>
-    <template #text>
-      <v-img
-        src="https://plus.unsplash.com/premium_photo-1738597453072-165b9d750e1b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8"
-        height="400"
-        cover
-      />
+  <BaseBlogCard v-slot="{ isHovering }">
+    <BlogImage
+      :src="blog.image"
+      :is-hovering
+      height="500"
+      width="100%"
+      content-class="d-flex align-center justify-center"
+      :gradient="
+        isHovering
+          ? 'to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)'
+          : ' to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)'
+      "
+    >
+      <div
+        v-if="isHovering"
+        class="ml-2 mb-2 d-flex"
+      >
+        <!-- type -->
+        <v-chip
+          variant="outlined"
+          text="Swimming"
+          color="white"
+          size="small"
+          class="my-auto"
+        />
 
-      <div class="mt-1">
-        <p class="text-h6">
-          {{ blog.title }}
-        </p>
+        <v-divider
+          vertical
+          color="white"
+          inset
+          opacity="1"
+          class="ml-2"
+        />
+
+        <!-- read time -->
+        <v-chip
+          prepend-icon="mdi-clock-outline"
+          text="10 Mins"
+          variant="text"
+          color="white"
+        />
       </div>
-    </template>
-  </v-card>
+    </BlogImage>
+
+    <div class="mt-1 pa-2">
+      <p class="text-h6">
+        {{ blog.title }}
+      </p>
+    </div>
+  </BaseBlogCard>
 </template>
 
 <script setup lang="ts">

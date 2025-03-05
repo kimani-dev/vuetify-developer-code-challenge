@@ -5,18 +5,23 @@
       cols="12"
       md="6"
     >
-      <PinnedBlog :blog="{...pinnedBlog, image: `https://picsum.photos/536/354`}" />
+      <PinnedBlog :blog="pinnedBlog" />
     </v-col>
 
     <v-col
       cols="12"
       md="6"
     >
-      <FeaturedBlog
-        v-for="blog in featuredBlogs"
+      <div
+        v-for="blog, index in featuredBlogs"
         :key="blog.title"
-        :blog="{...blog, image: `https://picsum.photos/536/354`}"
-      />
+      >
+        <div
+          v-if="index > 0"
+          class="mt-2"
+        />
+        <FeaturedBlog :blog="blog" />
+      </div>
     </v-col>
   </v-row>
 
@@ -28,7 +33,7 @@
       cols="12"
       md="4"
     >
-      <BlogCard :blog="{...blog, image: `https://picsum.photos/536/354`}" />
+      <BlogCard :blog="blog" />
     </v-col>
   </v-row>
 </template>
