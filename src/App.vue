@@ -10,9 +10,13 @@
       <v-app>
         <AppBar />
         <v-main>
-          <div class="pa-xl-2">
-            <router-view />
-          </div>
+          <router-view v-slot="{Component, route}">
+            <Transition :name="route.meta.transition as string ?? 'scale-transition'">
+              <div :key="route.path">
+                <component :is="Component" />
+              </div>
+            </Transition>
+          </router-view>
         </v-main>
       </v-app>
     </v-responsive>

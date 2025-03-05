@@ -1,5 +1,8 @@
 <template>
-  <BaseBlogCard v-slot="{ isHovering }">
+  <BaseBlogCard
+    :id="blog.id"
+    v-slot="{ isHovering }"
+  >
     <!-- blog image -->
     <BlogImage
       :src="blog.image"

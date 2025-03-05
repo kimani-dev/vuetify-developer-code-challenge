@@ -1,8 +1,9 @@
 {
     "blogs": [
       {
+        "id": 1,
         "title": "Record breaking, stunning performance leads the swimmer to a victory, securing their place in history",
-        "image": "https://picsum.photos/id/237/700/700",
+        "image": "https://picsum.photos/id/237/1200/700",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-03-02",
         "featured": false,
@@ -13,8 +14,9 @@
         }
       },
       {
+        "id": 2,
         "title": "Optimizing Vuetify Apps for Performance",
-        "image": "https://picsum.photos/id/201/200/300",
+        "image": "https://picsum.photos/id/201/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-03-01",
         "featured": true,
@@ -25,8 +27,9 @@
         }
       },
       {
+        "id": 3,
         "title": "Dark Mode & Theming in Vuetify",
-        "image": "https://picsum.photos/id/269/400/300",
+        "image": "https://picsum.photos/id/269/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-02-28",
         "featured": true,
@@ -37,8 +40,9 @@
         }
       },
       {
+        "id": 4,
         "title": "Pinia vs Vuex: State Management in Vue 3",
-        "image": "https://picsum.photos/id/296/200/300",
+        "image": "https://picsum.photos/id/296/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-02-27",
         "featured": true,
@@ -49,8 +53,9 @@
         }
       },
       {
+        "id": 5,
         "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/222/600/300",
+        "image": "https://picsum.photos/id/222/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-02-26",
         "featured": false,
@@ -61,8 +66,9 @@
         }
       },
       {
+        "id": 6,
         "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/212/400/300",
+        "image": "https://picsum.photos/id/212/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-02-26",
         "featured": false,
@@ -73,8 +79,9 @@
         }
       },
       {
+        "id": 7,
         "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/335/400/300",
+        "image": "https://picsum.photos/id/335/1200/300",
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
         "date": "2025-02-26",
         "featured": false,

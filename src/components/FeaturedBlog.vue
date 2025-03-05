@@ -1,5 +1,6 @@
 <template>
   <BaseBlogCard
+    :id="blog.id"
     v-slot="{ isHovering }"
     rounded="s-xl"
   >

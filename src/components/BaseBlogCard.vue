@@ -5,10 +5,10 @@
         v-bind="props"
         flat
         color="transparent"
-        link
         :ripple="false"
         :elevation="0"
         :rounded
+        :to="{ path: `/blogs/${id}`}"
       >
         <slot :is-hovering="isHovering" />
       </v-card>
@@ -20,11 +20,11 @@
 withDefaults(
   defineProps<{
     rounded?: string;
-    href?: string;
+    id?: number;
   }>(),
   {
     rounded: "t-xl",
-    href: "",
+    id: undefined,
   }
 );
 </script>
