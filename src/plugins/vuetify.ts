@@ -20,5 +20,10 @@ export default createVuetify({
     VChip: {
       color: "primary",
     },
+    VBtn: {
+      color: "primary",
+      variant: "elevated",
+      class: "text-capitalize",
+    },
   },
 });
