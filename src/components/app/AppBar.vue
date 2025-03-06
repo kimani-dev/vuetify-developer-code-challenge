@@ -13,6 +13,7 @@
         <v-btn
           variant="text"
           text="Your Blogs"
+          :to="{path: '/blogs/myblogs'}"
         />
 
         <v-divider

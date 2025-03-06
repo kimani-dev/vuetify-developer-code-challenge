@@ -17,7 +17,7 @@
         class="text-h6"
         :class="isHovering ? 'text-primary' : ''"
       >
-        {{ blog.title }}
+        {{ blog.title.substring(0,60) }}
       </p>
 
       <p class="text-subtitle-1 font-weight-light">

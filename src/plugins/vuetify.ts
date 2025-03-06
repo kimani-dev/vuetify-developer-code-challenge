@@ -39,5 +39,8 @@ export default createVuetify({
     VIcon: {
       color: "secondary",
     },
+    VTextField: {
+      color: "primary",
+    },
   },
 });

@@ -13,6 +13,7 @@ declare module 'vue' {
     BlogCard: typeof import('./components/blog/BlogCard.vue')['default']
     BlogImage: typeof import('./components/blog/BlogImage.vue')['default']
     BlogInfo: typeof import('./components/blog/BlogInfo.vue')['default']
+    BlogListCard: typeof import('./components/blog/BlogListCard.vue')['default']
     FeaturedBlog: typeof import('./components/blog/FeaturedBlog.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     PinnedBlog: typeof import('./components/blog/PinnedBlog.vue')['default']

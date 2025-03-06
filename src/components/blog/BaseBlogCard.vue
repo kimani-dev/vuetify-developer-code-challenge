@@ -10,7 +10,7 @@
         :rounded
         :to="{ path: `/blogs/${id}`}"
       >
-        <slot :is-hovering="isHovering" />
+        <slot :is-hovering="!!isHovering" />
       </v-card>
     </template>
   </v-hover>
@@ -20,7 +20,7 @@
 withDefaults(
   defineProps<{
     rounded?: string;
-    id?: number;
+    id: number;
   }>(),
   {
     rounded: "t-xl",
