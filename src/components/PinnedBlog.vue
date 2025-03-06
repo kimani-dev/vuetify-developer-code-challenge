@@ -17,31 +17,10 @@
     >
       <div
         v-if="isHovering"
-        class="ml-2 mb-2 d-flex"
       >
-        <!-- type -->
-        <v-chip
-          variant="outlined"
-          text="Swimming"
-          color="white"
-          size="small"
-          class="my-auto"
-        />
-
-        <v-divider
-          vertical
-          color="white"
-          inset
-          opacity="1"
-          class="ml-2"
-        />
-
-        <!-- read time -->
-        <v-chip
-          prepend-icon="mdi-clock-outline"
-          text="10 Mins"
-          variant="text"
-          color="white"
+        <BlogInfo
+          :blog
+          text-color="white"
         />
       </div>
     </BlogImage>

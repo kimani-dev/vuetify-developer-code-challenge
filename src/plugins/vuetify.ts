@@ -15,15 +15,29 @@ import { createVuetify } from "vuetify";
 export default createVuetify({
   theme: {
     defaultTheme: "light",
+    themes: {
+      light: {
+        colors: {
+          primary: "#212121",
+          secondary: "#26C6DA",
+        },
+      },
+      dark: {
+        colors: {
+          primary: "#26C6DA",
+          secondary: "#FF9100",
+        },
+      },
+    },
   },
   defaults: {
-    VChip: {
-      color: "primary",
-    },
     VBtn: {
       color: "primary",
       variant: "elevated",
       class: "text-capitalize",
+    },
+    VIcon: {
+      color: "secondary",
     },
   },
 });

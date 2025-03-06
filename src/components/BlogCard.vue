@@ -24,11 +24,7 @@
         {{ blog.text.substring(0, 150) }}
       </p>
 
-      <v-chip
-        prepend-icon="mdi-clock-outline"
-        text="10 Mins"
-        variant="text"
-      />
+      <BlogInfo :blog />
     </div>
   </BaseBlogCard>
 </template>
