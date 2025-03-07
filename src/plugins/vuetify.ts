@@ -11,6 +11,11 @@ import "vuetify/styles";
 // Composables
 import { createVuetify } from "vuetify";
 
+const formFieldsDefaults = {
+  color: "primary",
+  variant: "outlined",
+};
+
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
@@ -19,13 +24,13 @@ export default createVuetify({
       light: {
         colors: {
           primary: "#212121",
-          secondary: "#26C6DA",
+          secondary: "#708D81",
         },
       },
       dark: {
         colors: {
-          primary: "#26C6DA",
-          secondary: "#FF9100",
+          primary: "#645E9D",
+          secondary: "#C2AFF0",
         },
       },
     },
@@ -40,7 +45,10 @@ export default createVuetify({
       color: "secondary",
     },
     VTextField: {
-      color: "primary",
+      ...formFieldsDefaults,
+    },
+    VCombobox: {
+      ...formFieldsDefaults,
     },
   },
 });

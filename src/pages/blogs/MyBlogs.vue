@@ -9,7 +9,7 @@
       <v-btn
         text="Create Blog"
         prepend-icon="mdi-plus"
-        :to="{ path: '/blogs/create' }"
+        @click="showBlogDetailsDialog = true"
       />
     </div>
 
@@ -85,6 +85,13 @@
         />
       </template>
     </v-empty-state>
+
+    <!-- create blog details dialog -->
+    <BlogDetailsDialog
+      :blog="blogs?.[0]"
+      :show-dialog="showBlogDetailsDialog"
+      @close="showBlogDetailsDialog = false"
+    />
   </div>
 </template>
 
@@ -96,7 +103,7 @@ import BlogListCard from "@/components/blog/BlogListCard.vue";
 import BlogCard from "@/components/blog/BlogCard.vue";
 
 const blogs = computed<undefined | Blog[]>(() =>
-  data.blogs.filter((blog) => blog.title.includes(search.value))
+  data.blogs.filter((blog: Blog) => blog.title.includes(search.value))
 );
 
 // search
@@ -104,4 +111,7 @@ const search = ref("");
 
 // toggle list and grid view
 const showAsList = ref(true);
+
+// blog details dialog
+const showBlogDetailsDialog = ref(false)
 </script>

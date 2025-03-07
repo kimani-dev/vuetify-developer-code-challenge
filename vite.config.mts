@@ -24,7 +24,12 @@ export default defineConfig({
       },
     }),
     Components({
-      dirs: ["src/components", "src/components/blog", "src/components/app"],
+      dirs: [
+        "src/components",
+        "src/components/blog",
+        "src/components/app",
+        "src/components/general",
+      ],
       deep: true,
       extensions: ["vue"],
       dts: "src/components.d.ts",
