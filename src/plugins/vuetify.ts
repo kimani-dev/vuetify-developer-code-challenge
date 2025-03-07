@@ -50,5 +50,8 @@ export default createVuetify({
     VCombobox: {
       ...formFieldsDefaults,
     },
+    VTextarea: {
+      ...formFieldsDefaults,
+    },
   },
 });

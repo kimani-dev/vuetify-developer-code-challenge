@@ -55,16 +55,34 @@
 
       <v-checkbox
         v-model="blogForm.featured"
-        label="Make this blog featured"
         color="primary"
         hide-details="auto"
-      />
+      >
+        <template #label>
+          <p>
+            Make this blog featured?
+            <v-icon
+              v-tooltip="'Only the three latest featured blogs will be shown'"
+              icon="mdi-information-variant-circle"
+            />
+          </p>
+        </template>
+      </v-checkbox>
       <v-checkbox
         v-model="blogForm.pinned"
-        label="Pin of the blog?"
         color="primary"
         hide-details="auto"
-      />
+      >
+        <template #label>
+          <p>
+            Pin this blog?
+            <v-icon
+              v-tooltip="'Only the latest pinned blog will be shown'"
+              icon="mdi-information-variant-circle"
+            />
+          </p>
+        </template>
+      </v-checkbox>
 
       <!-- author details -->
       <div class="d-flex w-100 w-sm-50 mx-auto align-center mb-3">
@@ -96,6 +114,8 @@
 <script setup lang="ts">
 import { reactive, useTemplateRef } from "vue";
 import { v4 as uuid } from "uuid";
+import { useRouter } from "vue-router";
+import { useBlogStore } from "@/store/blog";
 import type Blog from "@/types/Blog";
 import moment from "moment";
 
@@ -105,12 +125,15 @@ const props = defineProps<{
 }>();
 defineEmits(["close"]);
 
+const { createBlog } = useBlogStore();
+const router = useRouter();
+
 const form = useTemplateRef("form");
 const blogForm = reactive({
   valid: false, // valid status of the form
   id: "",
   title: "",
-  type: null as null | string,
+  type: "",
   date: "",
   featured: false,
   pinned: false,
@@ -154,5 +177,9 @@ function proceedToEditor() {
   blogForm.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ss");
 
   // proceed to save to storage
+  /*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/
+  const { valid: _v, ...otherFields } = blogForm;
+  const newBlogId = createBlog(otherFields);
+  router.push(`/blogs/editor_${newBlogId}`);
 }
 </script>

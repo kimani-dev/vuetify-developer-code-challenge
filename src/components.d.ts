@@ -13,7 +13,6 @@ declare module 'vue' {
     BaseDialog: typeof import('./components/general/BaseDialog.vue')['default']
     BlogCard: typeof import('./components/blog/BlogCard.vue')['default']
     BlogDetailsDialog: typeof import('./components/blog/BlogDetailsDialog.vue')['default']
-    BlogDetailsForm: typeof import('./components/blog/BlogDetailsForm.vue')['default']
     BlogImage: typeof import('./components/blog/BlogImage.vue')['default']
     BlogInfo: typeof import('./components/blog/BlogInfo.vue')['default']
     BlogListCard: typeof import('./components/blog/BlogListCard.vue')['default']

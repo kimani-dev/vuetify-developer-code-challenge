@@ -3,7 +3,7 @@
     <!-- header section -->
     <div class="d-flex justify-space-between">
       <p class="text-h5">
-        My Blogs
+        My Blogs {{ typeof search }}
       </p>
 
       <v-btn
@@ -71,7 +71,7 @@
       title="No Blogs found"
       text="You have not created any blogs. Blogs you create will appear here"
       action-text="Add a New Blog"
-      @click:action="$router.push({ path: '/blogs/create' })"
+      @click:action="showBlogDetailsDialog = true"
     >
       <template #media>
         <v-img
@@ -88,7 +88,6 @@
 
     <!-- create blog details dialog -->
     <BlogDetailsDialog
-      :blog="blogs?.[0]"
       :show-dialog="showBlogDetailsDialog"
       @close="showBlogDetailsDialog = false"
     />
@@ -97,13 +96,16 @@
 
 <script setup lang="ts">
 import { ref, computed } from "vue";
-import data from "../../blog.json";
+import { useBlogStore } from "@/store/blog";
 import type Blog from "@/types/Blog";
 import BlogListCard from "@/components/blog/BlogListCard.vue";
 import BlogCard from "@/components/blog/BlogCard.vue";
 
-const blogs = computed<undefined | Blog[]>(() =>
-  data.blogs.filter((blog: Blog) => blog.title.includes(search.value))
+const blogStore = useBlogStore()
+const blogs = computed<Blog[]>(() =>
+  blogStore.blogs.filter((blog: Blog) =>
+    blog.title.includes(search.value ?? "") // When cleared via the clear icon, search becomes null which is matched as a string hence no results 
+  )
 );
 
 // search
@@ -113,5 +115,5 @@ const search = ref("");
 const showAsList = ref(true);
 
 // blog details dialog
-const showBlogDetailsDialog = ref(false)
+const showBlogDetailsDialog = ref(false);
 </script>

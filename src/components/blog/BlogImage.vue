@@ -1,7 +1,7 @@
 <template>
   <div class="overflow-hidden rounded-xl">
     <v-img
-      :src
+      :src="!!src ? src: $vuetify.theme.current.dark ? '/blog-image-dark.svg': '/blog-image-dark.svg'"
       class="overflow-hidden position-relative"
       :width
       :height
@@ -12,7 +12,7 @@
         transition: 'transform 0.3s ease-in-out',
       }"
       transition="scale-transition"
-      cover
+      :cover="!!src"
     >
       <v-fade-transition>
         <slot />

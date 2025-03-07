@@ -2,18 +2,20 @@
   <!-- pinned and featured blogs -->
   <v-row>
     <v-col
+      v-if="pinnedBlog"
       cols="12"
-      md="6"
+      :md="featuredBlogs.length ? 6 : 12"
     >
       <PinnedBlog :blog="pinnedBlog" />
     </v-col>
 
     <v-col
+      v-if="featuredBlogs.length"
       cols="12"
-      md="6"
+      :md="!!pinnedBlog ? 6 : 12"
     >
       <div
-        v-for="blog, index in featuredBlogs"
+        v-for="(blog, index) in featuredBlogs"
         :key="blog.title"
       >
         <div
@@ -28,7 +30,7 @@
   <!-- other blogs -->
   <v-row>
     <v-col
-      v-for="blog in normalBlogs"
+      v-for="blog in otherBlogs"
       :key="blog.title"
       cols="12"
       md="4"
@@ -39,13 +41,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from "vue";
-import data from "../blog.json"
-import type Blog from "@/types/Blog";
+import { useBlogStore } from "@/store/blog";
+import { storeToRefs } from "pinia";
 
-const blogs = ref<Blog[]>(data.blogs)
-
-const pinnedBlog = computed(()=> blogs.value.find((blog) => blog.pinned))
-const featuredBlogs =  computed(()=> blogs.value.filter((blog) => blog.featured))
-const normalBlogs = computed(() => blogs.value.filter((blog) => !blog.pinned && !blog.featured ))
+const blogStore = useBlogStore();
+const { otherBlogs, pinnedBlog, featuredBlogs } = storeToRefs(blogStore);
 </script>

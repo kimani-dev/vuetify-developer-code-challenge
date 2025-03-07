@@ -8,7 +8,7 @@
         :ripple="false"
         :elevation="0"
         :rounded
-        :to="{ path: `/blogs/${id}`}"
+        :to="{ path: `/blogs/${id}` }"
       >
         <slot :is-hovering="!!isHovering" />
       </v-card>
@@ -20,11 +20,11 @@
 withDefaults(
   defineProps<{
     rounded?: string;
-    id: number;
+    id: string;
   }>(),
   {
     rounded: "t-xl",
-    id: undefined,
+    id: "",
   }
 );
 </script>
