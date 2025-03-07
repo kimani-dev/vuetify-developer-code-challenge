@@ -21,6 +21,9 @@
       </v-app>
     </v-responsive>
   </v-container>
+
+  <!-- show alerts -->
+  <Alert />
 </template>
 
 <script lang="ts" setup>
