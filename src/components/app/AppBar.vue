@@ -89,11 +89,12 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { useStorage } from "@vueuse/core";
+import { computed } from "vue";
 import { useTheme } from "vuetify";
 
 // switch theme
-const currentTheme = ref("light");
+const currentTheme = useStorage("theme","light");
 
 const theme = useTheme();
 const themeName = computed(() =>

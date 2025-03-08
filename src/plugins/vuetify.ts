@@ -19,7 +19,7 @@ const formFieldsDefaults = {
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   theme: {
-    defaultTheme: "light",
+    defaultTheme: localStorage.getItem("theme") ?? "light",
     themes: {
       light: {
         colors: {
