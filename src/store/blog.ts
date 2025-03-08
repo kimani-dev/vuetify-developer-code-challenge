@@ -11,7 +11,7 @@ export const useBlogStore = defineStore("blog", () => {
   // getters
   const sortedBlogs = computed(() =>
     blogs.value.sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     )
   );
   const pinnedBlog = computed(() => blogs.value.find((blog) => blog.pinned)); // fetch the latest pinned blog

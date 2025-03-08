@@ -122,6 +122,7 @@ import moment from "moment";
 const props = defineProps<{
   showDialog: boolean;
   blog?: Blog;
+  redirectPath?: string
 }>();
 defineEmits(["close"]);
 
@@ -177,9 +178,10 @@ function proceedToEditor() {
   blogForm.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ss");
 
   // proceed to save to storage
-  /*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/
+  /*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/ // didn't work :(
   const { valid: _v, ...otherFields } = blogForm;
+  console.log(_v);
   const newBlogId = createBlog(otherFields);
-  router.push(`/blogs/editor_${newBlogId}`);
+  router.push(props.redirectPath ?? `/blogs/editor_${newBlogId}`);
 }
 </script>

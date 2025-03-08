@@ -53,5 +53,9 @@ export default createVuetify({
     VTextarea: {
       ...formFieldsDefaults,
     },
+    VFileInput: {
+      ...formFieldsDefaults,
+      prependIcon: "",
+    },
   },
 });
