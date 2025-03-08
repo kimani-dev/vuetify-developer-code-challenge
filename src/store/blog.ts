@@ -14,6 +14,9 @@ export const useBlogStore = defineStore("blog", () => {
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     )
   );
+  const sortedBlogsWithoutDrafts = computed(() =>
+    sortedBlogs.value.filter(({ draft }) => !draft)
+  );
   const pinnedBlog = computed(() => blogs.value.find((blog) => blog.pinned)); // fetch the latest pinned blog
   const featuredBlogs = computed(() =>
     blogs.value.filter((blog) => blog.featured)
@@ -21,6 +24,8 @@ export const useBlogStore = defineStore("blog", () => {
   const otherBlogs = computed(() =>
     blogs.value.filter((blog) => !blog.pinned && !blog.featured)
   );
+  // types
+  const blogTypes = computed(() => Array.from(new Set(blogs.value.map(({ type }) => type))));
 
   // methods
   function createBlog(blog: Blog) {
@@ -32,6 +37,22 @@ export const useBlogStore = defineStore("blog", () => {
     const index = blogs.value.findIndex((blog) => blog.id === id);
     if (index !== -1) {
       blogs.value[index] = { ...blogs.value[index], ...data };
+    }
+  }
+
+  // publish blog
+  function publishBlog(id: string) {
+    const index = blogs.value.findIndex((blog) => blog.id === id);
+    if (index !== -1) {
+      blogs.value[index].draft = false;
+    }
+  }
+
+  // delete blog
+  function deleteBlog(id: string) {
+    const index = blogs.value.findIndex((blog) => blog.id === id);
+    if (index !== -1) {
+      blogs.value.splice(index, 1);
     }
   }
 
@@ -48,11 +69,15 @@ export const useBlogStore = defineStore("blog", () => {
   });
 
   return {
-    blogs: sortedBlogs,
+    blogs: sortedBlogsWithoutDrafts,
+    allBlogs: sortedBlogs,
     pinnedBlog,
     featuredBlogs,
     otherBlogs,
+    blogTypes,
     createBlog,
     updateBlog,
+    publishBlog,
+    deleteBlog,
   };
 });

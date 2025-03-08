@@ -57,6 +57,17 @@
             prepend-icon="mdi-eye-outline"
             :to="{path: `/blogs/${blog.id}`}"
           />
+          <v-list-item
+            title="Publish Blog"
+            prepend-icon="mdi-publish"
+            @click="blogStore.publishBlog(blog.id)"
+          />
+          <v-list-item
+            title="Delete Blog"
+            color="error"
+            prepend-icon="mdi-trash-can-outline"
+            @click="blogStore.deleteBlog(blog.id)"
+          />
         </v-list>
       </v-menu>
     </div>
@@ -66,6 +77,9 @@
 <script setup lang="ts">
 import type Blog from "@/types/Blog";
 import moment from "moment";
+import { useBlogStore } from "@/store/blog";
+
+const blogStore = useBlogStore()
 
 defineProps<{
   blog: Blog;

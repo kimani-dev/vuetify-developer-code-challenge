@@ -7,6 +7,7 @@
     <v-btn
       text="Edit Blog Details"
       prepend-icon="mdi-pencil-outline"
+      @click="showBlogDetailsDialog = true"
     />
   </div>
 
@@ -26,11 +27,27 @@
       placeholder="Blog content here..."
       auto-grow
     />
-    <v-btn
-      text="Save"
-      @click="saveBlog"
-    />
+
+    <div class="mt-2 d-flex justify-space-between">
+      <v-btn
+        text="Save Draft"
+        variant="outlined"
+        @click="saveBlog"
+      />
+      <v-btn
+        text="Save and Exit"
+        color="success"
+        @click="saveBlog(false)"
+      />
+    </div>
   </div>
+
+  <!-- edit blog details dialog -->
+  <BlogDetailsDialog
+    :blog
+    :show-dialog="showBlogDetailsDialog"
+    @close="showBlogDetailsDialog = false"
+  />
 </template>
 
 <script setup lang="ts">
@@ -46,14 +63,18 @@ const blog = computed(() =>
   blogStore.blogs.find((blog) => blog.id === route.params.id)
 );
 
+// edit blog details
+const showBlogDetailsDialog = ref(false);
+
 const text = ref(blog.value?.text);
 const image = ref<null | File>(null);
 
-async function saveBlog() {
+async function saveBlog(draft = true) {
   if (!blog.value) return;
 
   const payload: Partial<Blog> = {
     text: text.value,
+    draft,
   };
   // add image if it exists
   if (image.value) {

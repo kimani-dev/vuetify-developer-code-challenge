@@ -103,7 +103,7 @@ import BlogCard from "@/components/blog/BlogCard.vue";
 
 const blogStore = useBlogStore()
 const blogs = computed<Blog[]>(() =>
-  blogStore.blogs.filter((blog: Blog) =>
+  blogStore.allBlogs.filter((blog: Blog) =>
     blog.title.includes(search.value ?? "") // When cleared via the clear icon, search becomes null which is matched as a string hence no results 
   )
 );
