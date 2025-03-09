@@ -18,7 +18,9 @@
       <v-chip
         prepend-icon="mdi-clock-outline"
         :text="`${
-          calculateReadTime(blog.text) > 2 ? calculateReadTime(blog.text) : '< 2'
+          calculateReadTime(blog.text) > 2
+            ? calculateReadTime(blog.text)
+            : '< 2'
         } mins`"
         variant="text"
       />
@@ -35,16 +37,15 @@
       />
     </div>
 
-
     <div
       v-if="showActions"
       class="justify-end"
     >
       <v-menu>
-        <template #activator="{props}">
+        <template #activator="{ props: attrs }">
           <v-icon
             icon="mdi-dots-vertical"
-            v-bind="props"
+            v-bind="attrs"
             @click="(e) => e.preventDefault()"
           />
         </template>
@@ -53,47 +54,82 @@
           <v-list-item
             title="Edit"
             prepend-icon="mdi-pencil-outline"
-            :to="{path: `/blogs/editor_${blog.id}`}"
+            :to="{ path: `/blogs/editor_${blog.id}` }"
           />
           <v-list-item
             title="View"
             prepend-icon="mdi-eye-outline"
-            :to="{path: `/blogs/${blog.id}`}"
+            :to="{ path: `/blogs/${blog.id}` }"
           />
           <v-list-item
             v-if="blog.draft"
             title="Publish Blog"
             prepend-icon="mdi-publish"
-            @click="blogStore.publishBlog(blog.id)"
+            @click="publishBlog"
           />
           <v-list-item
             title="Delete Blog"
             color="error"
             prepend-icon="mdi-trash-can-outline"
-            @click="blogStore.deleteBlog(blog.id)"
+            @click="showDeleteBlogDialog = true"
           />
         </v-list>
       </v-menu>
     </div>
   </div>
+
+  <!-- confirm delete dialog -->
+  <BaseDialog
+    title="Confirm"
+    subtitle="Delete Blog"
+    :visible="showDeleteBlogDialog"
+    action-button-text="Delete"
+    @action-click="deleteBlog"
+    @close="showDeleteBlogDialog = false"
+  >
+    <p>Are you sure you want to delete this blog?</p>
+  </BaseDialog>
 </template>
 
 <script setup lang="ts">
 import type Blog from "@/types/Blog";
 import moment from "moment";
 import { useBlogStore } from "@/store/blog";
+import { useSnackBarStore } from "@/store/snackbar";
+import { ref } from "vue";
 
-const blogStore = useBlogStore()
+const blogStore = useBlogStore();
+const snackBarStore = useSnackBarStore();
 
-defineProps<{
+const props = defineProps<{
   blog: Blog;
   textColor?: string;
-  showActions?: boolean
+  showActions?: boolean;
 }>();
+
+const showDeleteBlogDialog = ref(false);
 
 function calculateReadTime(text: string, wpm = 200) {
   const words = text.trim().split(/\s+/).length;
   const minutes = words / wpm;
   return Math.ceil(minutes);
+}
+
+function publishBlog() {
+  blogStore.publishBlog(props.blog.id);
+  snackBarStore.showSnackBar({
+    text: "Blog published succesfully",
+    type: "success",
+  });
+}
+
+function deleteBlog() {
+  blogStore.deleteBlog(props.blog.id);
+  snackBarStore.showSnackBar({
+    text: "Blog deleted succesfully",
+    type: "success",
+  });
+
+  showDeleteBlogDialog.value = false;
 }
 </script>

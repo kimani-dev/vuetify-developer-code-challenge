@@ -18,7 +18,7 @@
     <!-- image upload -->
     <v-file-input
       v-model="image"
-      label="Upload cover image"
+      label="Upload cover image (Optional)"
       prepend-inner-icon="mdi-image"
       accept="image/*"
     />
@@ -73,6 +73,16 @@ const image = ref<null | File>(null);
 const loading = ref(false);
 
 async function saveBlog(draft = true) {
+  // check for empty text
+  if (!text.value) {
+    snackbarStore.showSnackBar({
+      text: "Blog content cannot be empty",
+      type: "error",
+    });
+    return;
+  }
+
+  // show loader as image is converted to base 64
   loading.value = true;
   if (!blog.value) return;
 
