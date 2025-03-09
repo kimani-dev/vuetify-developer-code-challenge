@@ -3,7 +3,7 @@
     <!-- header section -->
     <div class="d-flex justify-space-between">
       <p class="text-h5">
-        My Blogs {{ typeof search }}
+        My Blogs
       </p>
 
       <v-btn
@@ -57,7 +57,7 @@
           >
             <component
               :is="showAsList ? BlogListCard : BlogCard"
-              v-bind="{ blog }"
+              v-bind="{ blog, showActions: true }"
             />
           </v-col>
         </v-slide-x-transition>

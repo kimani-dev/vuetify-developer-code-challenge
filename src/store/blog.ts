@@ -17,15 +17,21 @@ export const useBlogStore = defineStore("blog", () => {
   const sortedBlogsWithoutDrafts = computed(() =>
     sortedBlogs.value.filter(({ draft }) => !draft)
   );
-  const pinnedBlog = computed(() => blogs.value.find((blog) => blog.pinned)); // fetch the latest pinned blog
+  const pinnedBlog = computed(() =>
+    sortedBlogsWithoutDrafts.value.find((blog) => blog.pinned)
+  ); // fetch the latest pinned blog
   const featuredBlogs = computed(() =>
-    blogs.value.filter((blog) => blog.featured)
+    sortedBlogsWithoutDrafts.value.filter((blog) => blog.featured)
   );
   const otherBlogs = computed(() =>
-    blogs.value.filter((blog) => !blog.pinned && !blog.featured)
+    sortedBlogsWithoutDrafts.value.filter(
+      (blog) => !blog.pinned && !blog.featured
+    )
   );
   // types
-  const blogTypes = computed(() => Array.from(new Set(blogs.value.map(({ type }) => type))));
+  const blogTypes = computed(() =>
+    Array.from(new Set(blogs.value.map(({ type }) => type)))
+  );
 
   // methods
   function createBlog(blog: Blog) {

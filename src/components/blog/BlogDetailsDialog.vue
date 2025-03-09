@@ -57,6 +57,7 @@
         v-model="blogForm.featured"
         color="primary"
         hide-details="auto"
+        :disabled="blogForm.pinned"
       >
         <template #label>
           <p>
@@ -72,6 +73,7 @@
         v-model="blogForm.pinned"
         color="primary"
         hide-details="auto"
+        :disabled="blogForm.featured"
       >
         <template #label>
           <p>
@@ -126,7 +128,7 @@ const props = defineProps<{
 
 const emit = defineEmits(["close"]);
 
-const blogStore = useBlogStore()
+const blogStore = useBlogStore();
 const router = useRouter();
 
 const form = useTemplateRef("form");
@@ -177,18 +179,15 @@ function saveBlogDetails() {
   blogForm.date = moment(new Date()).format("YYYY-MM-DDTHH:mm:ss");
 
   // proceed to save to storage
-  /*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/ // didn't work :(
-  const { valid: _v, ...otherFields } = blogForm;
-  console.log(_v);
-  const newBlogId = blogStore.createBlog(otherFields);
+  const data = { ...blogForm, type: blogForm.type as string };
+  const newBlogId = blogStore.createBlog(data);
   router.push(`/blogs/editor_${newBlogId}`);
 }
 
 function updateBlogDetails() {
   if (!props.blog) return;
-  const { valid: _v, ...otherFields } = blogForm;
-  console.log(_v);
-  blogStore.updateBlog(props.blog?.id, { ...otherFields });
+  const data = { ...blogForm, type: blogForm.type as string };
+  blogStore.updateBlog(props.blog?.id, { ...data });
   emit("close");
 }
 

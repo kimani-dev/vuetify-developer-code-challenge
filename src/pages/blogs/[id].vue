@@ -6,12 +6,18 @@
         prepend-icon="mdi-chevron-left"
         text="Back"
         variant="text"
-        :to="{ path: '/' }"
+        @click="$router.back()"
       />
 
       <!-- title section -->
-      <v-row justify="center" class="mt-5">
-        <v-col cols="12" md="7">
+      <v-row
+        justify="center"
+        class="mt-5"
+      >
+        <v-col
+          cols="12"
+          md="7"
+        >
           <!-- blog type -->
           <div class="d-flex justify-center">
             <v-chip :text="blog.type" />
@@ -40,21 +46,32 @@
             !!blog.image
               ? blog.image
               : $vuetify.theme.current.dark
-              ? '/blog-image-dark.svg'
-              : '/blog-image-dark.svg'
+                ? '/blog-image-dark.svg'
+                : '/blog-image-dark.svg'
           "
           height="500"
           width="100%"
           :cover="!!blog.image"
+          @load="handleImageError"
         />
       </v-row>
 
       <!-- blog text -->
-      <v-row class="mt-5 pa-3">
-        <p
-          class="text-body-1 font-weight-light"
-          v-html="blog.text.replace(/\n/g, '<br/>')"
-        />
+      <v-row class="mt-5 pa-2">
+        <v-col>
+          <p
+            class="text-body-1 font-weight-light"
+            v-html="blog.text.replace(/\n/g, '<br/>')"
+          />
+
+          <div class="d-flex justify-end mt-3">
+            <v-list-item
+              prepend-avatar="https://i.pravatar.cc/100?img=2"
+              :title="blog.author.name"
+              :subtitle="blog.author.email"
+            />
+          </div>
+        </v-col>
       </v-row>
     </div>
 
@@ -83,6 +100,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import { useBlogStore } from "@/store/blog";
+import { useSnackBarStore } from "@/store/snackbar";
 import moment from "moment";
 
 const { params } = useRoute();
@@ -90,4 +108,13 @@ const id = params.id as string;
 
 const blogStore = useBlogStore();
 const blog = blogStore.blogs.find((blog) => blog.id === id);
+
+const { showSnackBar } = useSnackBarStore();
+function handleImageError(e: string | undefined) {
+  showSnackBar({
+    text: `Error loading our images: ${e}. Please try hard reloading with CTRL + SHIFT + R`,
+    type: "error",
+    actionText: "Close",
+  });
+}
 </script>

@@ -15,7 +15,7 @@
       :md="!!pinnedBlog ? 6 : 12"
     >
       <div
-        v-for="(blog, index) in featuredBlogs"
+        v-for="(blog, index) in featuredBlogs.slice(0,3)"
         :key="blog.title"
       >
         <div

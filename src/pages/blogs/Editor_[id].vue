@@ -52,15 +52,17 @@
 
 <script setup lang="ts">
 import { useBlogStore } from "@/store/blog";
+import { useSnackBarStore } from "@/store/snackbar";
 import type Blog from "@/types/Blog";
 import { computed, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const blogStore = useBlogStore();
+const snackbarStore = useSnackBarStore();
 const route = useRoute();
 const router = useRouter();
 const blog = computed(() =>
-  blogStore.blogs.find((blog) => blog.id === route.params.id)
+  blogStore.allBlogs.find((blog) => blog.id === route.params.id)
 );
 
 // edit blog details
@@ -68,8 +70,10 @@ const showBlogDetailsDialog = ref(false);
 
 const text = ref(blog.value?.text);
 const image = ref<null | File>(null);
+const loading = ref(false);
 
 async function saveBlog(draft = true) {
+  loading.value = true;
   if (!blog.value) return;
 
   const payload: Partial<Blog> = {
@@ -87,6 +91,13 @@ async function saveBlog(draft = true) {
 
   blogStore.updateBlog(blog.value?.id, payload);
   router.push({ path: "/blogs/myblogs" });
+
+  // stop loader and show snackbar
+  loading.value = false;
+  snackbarStore.showSnackBar({
+    text: "Blog saved succesfully",
+    type: "success",
+  });
 }
 
 function imageToBase64(file: File): Promise<string> {

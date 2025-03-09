@@ -36,7 +36,10 @@
     </div>
 
 
-    <div class="justify-end">
+    <div
+      v-if="showActions"
+      class="justify-end"
+    >
       <v-menu>
         <template #activator="{props}">
           <v-icon
@@ -58,6 +61,7 @@
             :to="{path: `/blogs/${blog.id}`}"
           />
           <v-list-item
+            v-if="blog.draft"
             title="Publish Blog"
             prepend-icon="mdi-publish"
             @click="blogStore.publishBlog(blog.id)"
@@ -84,6 +88,7 @@ const blogStore = useBlogStore()
 defineProps<{
   blog: Blog;
   textColor?: string;
+  showActions?: boolean
 }>();
 
 function calculateReadTime(text: string, wpm = 200) {

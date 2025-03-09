@@ -5,8 +5,8 @@
         !!src
           ? src
           : $vuetify.theme.current.dark
-          ? '/blog-image-dark.svg'
-          : '/blog-image-dark.svg'
+            ? '/blog-image-dark.svg'
+            : '/blog-image-dark.svg'
       "
       class="overflow-hidden position-relative"
       :width

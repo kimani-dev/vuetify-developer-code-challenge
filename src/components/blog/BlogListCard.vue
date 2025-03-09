@@ -27,7 +27,10 @@
             {{ blog.text.substring(0, 150) }}
           </p>
 
-          <BlogInfo :blog />
+          <BlogInfo
+            :blog
+            :show-actions
+          />
         </div>
       </v-col>
     </v-row>
@@ -39,5 +42,6 @@ import type Blog from "@/types/Blog";
 
 defineProps<{
   blog: Blog;
+  showActions?: boolean;
 }>();
 </script>
