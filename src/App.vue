@@ -9,6 +9,7 @@
     >
       <v-app>
         <AppBar />
+
         <v-main>
           <router-view v-slot="{Component, route}">
             <Transition :name="route.meta.transition as string ?? 'scale-transition'">
@@ -18,6 +19,8 @@
             </Transition>
           </router-view>
         </v-main>
+
+        <AppFooter />
       </v-app>
     </v-responsive>
   </v-container>

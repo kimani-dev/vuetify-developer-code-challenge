@@ -10,6 +10,7 @@ declare module 'vue' {
     Alert: typeof import('./components/general/Alert.vue')['default']
     AppBar: typeof import('./components/app/AppBar.vue')['default']
     AppCustomLogo: typeof import('./components/app/AppCustomLogo.vue')['default']
+    AppFooter: typeof import('./components/app/AppFooter.vue')['default']
     BaseBlogCard: typeof import('./components/blog/BaseBlogCard.vue')['default']
     BaseDialog: typeof import('./components/general/BaseDialog.vue')['default']
     BlogCard: typeof import('./components/blog/BlogCard.vue')['default']
