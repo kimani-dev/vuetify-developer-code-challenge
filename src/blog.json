@@ -1,109 +1,109 @@
 {
-    "blogs": [
-      {
-        "id": "1",
-        "title": "Record breaking, stunning performance leads the swimmer to a victory, securing their place in history",
-        "image": "https://picsum.photos/id/237/1200/700",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-03-02",
-        "featured": false,
-        "pinned": true,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "David Kimani",
-          "email": "daviemim07@gmail.com"
-        }
-      },
-      {
-        "id": "2",
-        "title": "Optimizing Vuetify Apps for Performance",
-        "image": "https://picsum.photos/id/201/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-03-01",
-        "featured": true,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "Jane Doe",
-          "email": "jane.doe@example.com"
-        }
-      },
-      {
-        "id": "3",
-        "title": "Dark Mode & Theming in Vuetify",
-        "image": "https://picsum.photos/id/269/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-02-28",
-        "featured": true,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "John Smith",
-          "email": "john.smith@example.com"
-        }
-      },
-      {
-        "id": "4",
-        "title": "Pinia vs Vuex: State Management in Vue 3",
-        "image": "https://picsum.photos/id/296/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-02-27",
-        "featured": true,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "Emily Johnson",
-          "email": "emily.johnson@example.com"
-        }
-      },
-      {
-        "id": "5",
-        "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/222/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-02-26",
-        "featured": false,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "Michael Brown",
-          "email": "michael.brown@example.com"
-        }
-      },
-      {
-        "id": "6",
-        "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/212/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-02-26",
-        "featured": false,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "Michael Brown",
-          "email": "michael.brown@example.com"
-        }
-      },
-      {
-        "id": "7",
-        "title": "Best Practices for Vue 3 Composition API",
-        "image": "https://picsum.photos/id/335/1200/300",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum",
-        "date": "2025-02-26",
-        "featured": false,
-        "pinned": false,
-        "type": "Technology",
-        "draft": false,
-        "author": {
-          "name": "Michael Brown",
-          "email": "michael.brown@example.com"
-        }
+  "blogs": [
+    {
+      "id": "1",
+      "title": "From Curiosity to Expertise: How Vuetify Transformed My Vue.js Development Journey and Elevated My UI Skills",
+      "image": "https://avatars.githubusercontent.com/u/64257312?v=4",
+      "text": "When I first discovered Vuetify, I was just looking for a way to speed up my Vue.js development. I had tried other UI libraries before, but none felt as intuitive and well-structured as Vuetify. From the first component I used, I knew I had found something special. The extensive documentation, active community, and the sheer number of pre-built components made my development process smoother than ever before.\n\nOver the years, Vuetify has become an essential part of my workflow. Whether building dashboards, enterprise applications, or small side projects, I’ve relied on its flexibility and well-designed system. One of the biggest lessons I’ve learned is how powerful a well-maintained UI framework can be. It has helped me focus on functionality instead of getting stuck on styling, making my projects more efficient and visually appealing.\n\nBeyond the technical benefits, Vuetify also introduced me to an incredible community. Through forums, Discord, and GitHub discussions, I’ve connected with developers worldwide, exchanging ideas and helping others debug issues. This experience has solidified my passion for Vue.js and frontend development as a whole.",
+      "date": "2025-03-02",
+      "featured": false,
+      "pinned": true,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "David Kimani",
+        "email": "daviemim07@gmail.com"
       }
-    ]
-  }
+    },
+    {
+      "id": "2",
+      "title": "From Chaos to Order: How Vuetify's Grid System Transformed My Approach to Vue Layouts",
+      "text": "When I first started building Vue applications, my layouts were a mess. Elements misaligned, spacing inconsistent, and responsiveness unpredictable. I tried CSS frameworks, but none felt natural until I discovered Vuetify’s grid system.\n\nWith just a few classes, I could structure pages with ease. The 12-column grid gave me full control over layouts, making components more adaptable. Breakpoints ensured a seamless experience across devices, and utility classes saved me from writing endless CSS.\n\nWhat once took hours of tweaking now happens in minutes. Vuetify turned my layout struggles into a smooth, enjoyable process, letting me focus on what truly matters—building great user experiences.",
+      "image": "https://picsum.photos/id/201/1200/300",
+      "date": "2025-03-01",
+      "featured": true,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "Jane Doe",
+        "email": "jane.doe@example.com"
+      }
+    },
+    {
+      "id": "3",
+      "title": "The Art of Simplicity: How Vuetify's Prebuilt Components Saved Me Countless Hours",
+      "text": "I used to spend hours designing UI components from scratch, ensuring accessibility, responsiveness, and a polished look. Then I found Vuetify, and everything changed.\n\nWith its vast collection of prebuilt components, I could drop in buttons, dialogs, tables, and more—fully styled and ready to go. No need to worry about theming inconsistencies or reinventing the wheel. The `v-data-table` alone saved me weeks of work by handling pagination, sorting, and filtering out of the box.\n\nNow, I build interfaces faster than ever, with confidence that they’ll look and feel great. Vuetify didn’t just improve my workflow—it redefined how I approach UI development.",
+      "image": "https://picsum.photos/id/269/1200/300",
+      "date": "2025-02-28",
+      "featured": true,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "John Smith",
+        "email": "john.smith@example.com"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Mastering Vue 3: Best Practices for the Composition API to Keep Your Code Clean and Scalable",
+      "text": "When Vue 3 introduced the Composition API, it revolutionized how we structure components. At first, it felt unfamiliar, but over time, I discovered best practices that made my code more readable, scalable, and maintainable.\n\nOne key practice is to organize logic into composables. Instead of cramming everything into `setup()`, I extract reusable logic into separate functions, keeping components clean. For example, `useFetch` for API calls or `useAuth` for authentication.\n\nAnother tip is to use reactive state wisely. `ref` is great for primitives, but for complex objects, `reactive` provides better reactivity. I also avoid excessive watchers, opting for computed properties where possible.\n\nLastly, keeping components modular is crucial. Instead of bloated files, I break large features into smaller, focused components. With these strategies, the Composition API has become my go-to approach for writing efficient Vue applications.",
+      "image": "https://picsum.photos/id/296/1200/300",
+      "date": "2025-02-27",
+      "featured": true,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "Emily Johnson",
+        "email": "emily.johnson@example.com"
+      }
+    },
+    {
+      "id": "5",
+      "title": "State Management Made Simple: Unlocking the Power of Pinia in Vue 3 Applications",
+      "text": "State management has always been a crucial part of building Vue applications, and while Vuex served its purpose, Pinia brings a fresh, modern approach. When I first tried it, I was amazed at how intuitive and lightweight it felt compared to Vuex.\n\nOne of the biggest advantages of Pinia is its simplicity. There's no need to mutate state through convoluted actions—just update state directly. For example, defining a store with `defineStore` makes managing state feel natural. No more unnecessary boilerplate.\n\nAnother game-changer is its built-in support for TypeScript. With strong typing, it’s easier to catch errors and ensure our store logic remains robust. Plus, Pinia supports Vue DevTools, making debugging effortless.\n\nWhether you’re handling authentication, caching API data, or managing global UI state, Pinia makes state management in Vue 3 applications smoother than ever. It's a must-have tool for any Vue developer looking for scalability and maintainability.",
+      "image": "https://picsum.photos/id/222/1200/300",
+      "date": "2025-02-26",
+      "featured": false,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "Michael Brown",
+        "email": "michael.brown@example.com"
+      }
+    },
+    {
+      "id": "6",
+      "title": "From React to Vue: A Developer's Journey of Discovering Simplicity and Elegance",
+      "text": "Switching from React to Vue can feel like stepping into a new world, but one that's surprisingly familiar. When I made the transition, I quickly realized that Vue offers an intuitive and elegant approach to building applications while keeping the reactivity model that I loved in React.\n\nOne of the first things that stood out was Vue's simplicity. With its Composition API, Vue 3 feels closer to React’s hooks, making the learning curve smoother. The `setup` function, computed properties, and lifecycle hooks bring structure while maintaining flexibility.\n\nAnother big win is Vue's built-in directives like `v-if`, `v-for`, and `v-model`, which eliminate the need for manually handling state updates like in React’s controlled components. JSX is great, but Vue's template syntax is more readable and declarative for many use cases.\n\nPerhaps the most enjoyable part is working with Vue’s ecosystem. Vue Router is straightforward, Pinia makes state management painless, and Vuetify provides an excellent UI framework out of the box. The Vue developer experience is refreshingly cohesive, making it an excellent choice for developers moving from React.\n\nIf you're a React developer considering Vue, give it a try! You might find yourself enjoying the simplicity, reactivity, and well-designed ecosystem just as much as I did.",
+      "image": "https://picsum.photos/id/212/1200/300",
+      "date": "2025-02-26",
+      "featured": false,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "Michael Brown",
+        "email": "michael.brown@example.com"
+      }
+    },
+    {
+      "id": "7",
+      "title": "A Tailwind Developer's Guide to Starting with Vuetify: Bridging Utility-First CSS with Component-Based UI",
+      "text": "As a Tailwind CSS enthusiast, moving to Vuetify might seem like a shift from utility-first styling to a more component-based UI framework. However, once you understand the design philosophy behind Vuetify, you'll realize how seamlessly the two can work together.\n\nOne of the first things to note is that Vuetify provides a pre-designed Material Design system with responsive layouts, typography, and interactive components. Unlike Tailwind, where you build styles from atomic classes, Vuetify components come with default styles that follow Material Design principles. However, Vuetify allows customization through props, global styles, and CSS variables, making it possible to integrate Tailwind where necessary.\n\nAnother key difference is handling layout. Tailwind relies on flex and grid utilities, while Vuetify has a powerful grid system with `v-container`, `v-row`, and `v-col`. If you’re coming from Tailwind, understanding how Vuetify’s grid works will help you structure your layouts efficiently.\n\nFor utility-first styling lovers, Vuetify’s `class` bindings give you flexibility. You can still use Tailwind for custom styling while letting Vuetify handle complex UI components like dialogs, navigation drawers, and data tables. The best part? You get a consistent Material Design experience without writing styles from scratch.\n\nIf you’re a Tailwind user trying out Vuetify, start by understanding its component structure, embrace its grid system, and remember that you can always mix in utility classes where needed. Once you strike a balance between the two, you’ll have a powerful setup for building beautiful, functional UIs with minimal effort.",
+      "image": "https://picsum.photos/id/335/1200/300",
+      "date": "2025-02-26",
+      "featured": false,
+      "pinned": false,
+      "type": "Technology",
+      "draft": false,
+      "author": {
+        "name": "Michael Brown",
+        "email": "michael.brown@example.com"
+      }
+    }
+  ]
+}
