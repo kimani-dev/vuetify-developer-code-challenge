@@ -52,7 +52,7 @@
           height="500"
           width="100%"
           :cover="!!blog.image"
-          @load="handleImageError"
+          @error="handleImageError"
         />
       </v-row>
 
