@@ -12,7 +12,7 @@
         <BlogImage
           :src="blog.image"
           :is-hovering
-          height="180"
+          height="200"
           width="100%"
         />
       </v-col>
@@ -21,13 +21,13 @@
         cols="12"
         md="8"
       >
-        <div class="d-flex flex-column ga-2">
+        <div class="d-flex flex-column ga-1">
           <p class="text-h6">
             {{ blog.title }}
           </p>
 
           <p class="text-subtitle-1 font-weight-light">
-            {{ blog.text.substring(0, 150) }}
+            {{ useWordSafeSubstring(blog.text, 90) }}
           </p>
 
           <BlogInfo :blog />
@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+import { useWordSafeSubstring } from "@/composables/useTextTruncate";
 import type Blog from "@/types/Blog";
 
 defineProps<{

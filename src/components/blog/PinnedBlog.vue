@@ -29,11 +29,15 @@
       <p class="text-h6">
         {{ blog.title }}
       </p>
+      <p class="text-subtitle-1 font-weight-light">
+        {{ useWordSafeSubstring(blog.text, 80) }}
+      </p>
     </div>
   </BaseBlogCard>
 </template>
 
 <script setup lang="ts">
+import { useWordSafeSubstring } from "@/composables/useTextTruncate";
 import type Blog from "@/types/Blog";
 
 defineProps<{ blog: Blog }>();
