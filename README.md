@@ -39,7 +39,7 @@ npm run build
 Hi, I'm **David Kimani**, a passionate full-stack developer specializing in Vue.js and Vuetify. With nearly **six years of experience using Vuetify in production**, I have built complex applications with elegant UI/UX. I'm always excited about modern frontend development, animations, and smooth user experiences.
 
 💻 Github: https://github.com/kimani-dev  
-💼 LinkedIn: [your-profile](https://linkedin.com/in/davidkimani)  
+💼 LinkedIn: https://linkedin.com/in/davidkimani  
 
 ---
 Feel free to contribute and improve the project!
